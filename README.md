@@ -57,14 +57,15 @@ Note: If you are getting &quot;java.security.InvalidKeyException: Illegal key si
 
 The source code contains implementation utilities java files for generating salt, encrypt password with salt to return an encrypted string. Below table explains what each file does.
 
-1 - jasypt-1.9.2.jar - This jar will provide basic encryption capabilities with minimum effort. This jar is not included in the src repository. You may have to download it from Download section at [http://www.jasypt.org/download.html](http://www.jasypt.org/download.html) |
+1 - jasypt-1.9.2.jar - This jar will provide basic encryption capabilities with minimum effort. This jar is not included in the src repository. You may have to download it from Download section at [http://www.jasypt.org/download.html](http://www.jasypt.org/download.html) 
 
 2. PERFTextEncryption.java -Implements the YCPEncrypter interface. Once production env, this class accesses the secret key file (KeyFile.txt) in the system folder location for salting password and decrypting. 
-3.PERFGenerateSaltKey.java- Generates random salt key 
+
+3. PERFGenerateSaltKey.java- Generates random salt key 
 
 4. KeyFile.txt-Stores secret key 
 
-5.PERFGenerateEncryptedPasswordString.java- To unit test encryption of the plain Text with secret key 
+5. PERFGenerateEncryptedPasswordString.java- To unit test encryption of the plain Text with secret key 
 
 - If the Jasypt library does not provide security algorithm suitable for your company threat model, do implement higher level of security algorithm (like AES) by using java crypto package (reference provided below).
 - You can write wrapping scripts utilities using encryption class for win and linux command line to quickly generate and verify encrypting and decrypting strings.
